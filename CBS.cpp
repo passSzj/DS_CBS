@@ -407,3 +407,34 @@ void highLevelCBS::printSolution(CTNode* ct){
     cout<<"Makespan: "<<makespan<<endl;
     cout<<"Expand: "<<ct->getTotalExpand()<<endl;
 }
+
+
+bool highLevelCBS::retrieveAndPopCTNodeWithLowestCost(CTNode** node)
+{
+    int minCostIndex = -1;
+    for (int i = 0; i < _open.size(); i++)
+    {
+
+        if (minCostIndex == -1 || _open[i]->cost < _open[minCostIndex]->cost)
+        {
+            minCostIndex = i;
+        }
+    }
+
+    if (minCostIndex != -1)
+    {
+        *node = _open[minCostIndex];
+        _open[minCostIndex] = _open.back();
+        _open.pop_back();
+        return true;
+    }
+
+    return false;
+}
+
+
+int highLevelCBS::getExpand(){
+    return highExpand+lowLevelCBS.getLowExpand();
+}
+
+

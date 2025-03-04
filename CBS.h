@@ -249,42 +249,14 @@ public:
     bool UpdateSolutionByLowLevel(CTNode &node, int agentIndex);
     void printSolution(CTNode* ct);
     bool checkNewSolution(CTNode&node,int agent0,int agnet1);
+    bool retrieveAndPopCTNodeWithLowestCost(CTNode** node);
+    int getExpand();
 
     void readInput(){
-        initMapFromXML("D:\\test\\DS-CBS-main\\MapData\\SL_Task1.xml", m);
+        initMapFromXML("D:\\clone\\DS_CBS\\MapData\\SL_Task2.xml", m);
         lowLevelCBS.m=this->m;
+        _agents=ReadAgentsFromXML("D:\\clone\\DS_CBS\\AgentData\\SL_Task2_9Agent.xml");
 
-
-        _agents=ReadAgentsFromXML("D:\\test\\DS-CBS-main\\AgentData\\SL_Task1_10Agent.xml");
-
-    }
-
-
-    bool retrieveAndPopCTNodeWithLowestCost(CTNode** node)
-    {
-        int minCostIndex = -1;
-        for (int i = 0; i < _open.size(); i++)
-        {
-
-            if (minCostIndex == -1 || _open[i]->cost < _open[minCostIndex]->cost)
-            {
-                minCostIndex = i;
-            }
-        }
-
-        if (minCostIndex != -1)
-        {
-            *node = _open[minCostIndex];
-            _open[minCostIndex] = _open.back();
-            _open.pop_back();
-            return true;
-        }
-
-        return false;
-    }
-
-    int getExpand(){
-        return highExpand+lowLevelCBS.getLowExpand();
     }
 
 

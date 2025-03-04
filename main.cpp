@@ -9,7 +9,7 @@
 
 void print_memory_usage();
 void printMemoryUsage();
-//void logMemoryAndTime(double elapsed);
+
 
 int main() {
     highLevelCBS CBS;
@@ -43,20 +43,3 @@ void print_memory_usage() {
     }
 }
 
-//void logMemoryAndTime(double elapsed) {
-//    std::ofstream logFile("memory_and_time_log.txt", std::ios::app);
-//    if (logFile.is_open()) {
-//        PROCESS_MEMORY_COUNTERS pmc;
-//        if (GetProcessMemoryInfo(GetCurrentProcess(), &pmc, sizeof(pmc))) {
-//            logFile << "当前内存使用量: " << pmc.WorkingSetSize / 1024 << " KB" << std::endl;
-//            logFile << "最大内存使用量: " << pmc.PeakWorkingSetSize / 1024 << " KB" << std::endl;
-//        } else {
-//            logFile << "无法获取内存信息" << std::endl;
-//        }
-//        logFile << "运行时间: " << elapsed << " 秒" << std::endl;
-//        logFile << "------------------------------" << std::endl;
-//        logFile.close();
-//    } else {
-//        std::cerr << "无法打开日志文件" << std::endl;
-//    }
-//}
