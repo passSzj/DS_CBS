@@ -102,8 +102,8 @@ public:
             vertex->f = 0;
             vertex->vl.parent = nullptr;
             vertex->vl.depth = 0;
-            vertex->visitLeft=false;
-            vertex->visitRight=false;
+            vertex->visitLeftSubVertex=false;
+            vertex->visitRightSubVertex=false;
         }
     }
 

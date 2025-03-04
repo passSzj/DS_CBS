@@ -1,0 +1,20 @@
+<agents>
+    <agent>
+        <startX>0</startX>
+        <startY>1300</startY>
+        <goalX>3400</goalX>
+        <goalY>1000</goalY>
+        <speed>50</speed>
+    </agent>
+
+
+    <agent>
+        <startX>0</startX>
+        <startY>1000</startY>
+        <goalX>3400</goalX>
+        <goalY>1300</goalY>
+        <speed>50</speed>
+    </agent>
+
+
+</agents>

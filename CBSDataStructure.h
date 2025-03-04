@@ -62,7 +62,7 @@ struct rightVertex : public Vertex{
 
 struct doubleVertex{
 
-    doubleVertex(leftVertex *vl, rightVertex *vr):g(0),h(0),f(0),visitLeft(false),visitRight(false)
+    doubleVertex(leftVertex *vl, rightVertex *vr): g(0), h(0), f(0), visitLeftSubVertex(false), visitRightSubVertex(false)
         //number(num)
     {
         this->vl=*vl;
@@ -80,8 +80,8 @@ struct doubleVertex{
         vr=other.vr;
         vl=other.vl;
 
-        visitRight=other.visitRight;
-        visitLeft=other.visitLeft;
+        visitRightSubVertex=other.visitRightSubVertex;
+        visitLeftSubVertex=other.visitLeftSubVertex;
 
         parent= nullptr;
         depth=other.depth;
@@ -98,8 +98,8 @@ struct doubleVertex{
         vr=other.vr;
         vl=other.vl;
 
-        visitRight=other.visitRight;
-        visitLeft=other.visitLeft;
+        visitRightSubVertex=other.visitRightSubVertex;
+        visitLeftSubVertex=other.visitLeftSubVertex;
 
         parent= nullptr;
         depth=newTime;
@@ -116,8 +116,8 @@ struct doubleVertex{
     double g;
     double h;
     double f;
-    bool visitLeft;
-    bool visitRight;
+    bool visitLeftSubVertex;
+    bool visitRightSubVertex;
     std::vector<Vertex*> vrNeighbors;
     std::vector<Vertex*> vlNeighbors;
     std::vector<std::tuple<int,int>> vrlengthAndMaxSpeed;
@@ -129,10 +129,10 @@ struct doubleVertex{
     }
 
     int getSuccessorsSize(doubleVertex *start,doubleVertex *goal){
-        if(this->visitLeft){
+        if(this->visitLeftSubVertex){
             return vlNeighbors.size();
         }
-        if(this->visitRight){
+        if(this->visitRightSubVertex){
             return vrNeighbors.size();
         }
         if((*this)==(*start)){
