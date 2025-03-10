@@ -253,12 +253,8 @@ bool highLevelCBS::ValidPathsInCTNode(CTNode&node){
                 if(a!=(int)solution[j]->Nodes.size()-1&&b!=(int)solution[k]->Nodes.size()-1){
 
                     if(doIntersect(solution[j]->Nodes[a],solution[j]->Nodes[a+1],solution[k]->Nodes[b],solution[k]->Nodes[b+1])){
-
-
-
                         int agent1Time=node.getFirstArriveTime(solution[j]->agentIndex,solution[j]->Nodes[a]);
                         int agent2Time=node.getFirstArriveTime(solution[k]->agentIndex,solution[k]->Nodes[b]);
-
                         node.addConflict(new Conflict(_agents[solution[j]->agentIndex],_agents[solution[k]->agentIndex],
                                                       nullptr,agent1Time,agent2Time,i));
                         valid_solution= false;
@@ -323,7 +319,6 @@ bool highLevelCBS::checkNewSolution(CTNode& node,int agent0,int agent1){
                     valid= false;
                     return valid;
                 }
-
 
 
                 if(a!=(int)solution[j]->Nodes.size()-1&&b!=(int)solution[k]->Nodes.size()-1){
