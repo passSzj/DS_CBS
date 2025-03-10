@@ -145,6 +145,15 @@ struct doubleVertex{
 
     }
 
+    void convertLeftSubvertex(){
+        this->visitLeftSubVertex= true;
+        this->visitRightSubVertex= false;
+    }
+
+    void convertRightSubvertex(){
+        this->visitRightSubVertex= true;
+        this->visitLeftSubVertex= false;
+    }
 };
 
 struct Path{

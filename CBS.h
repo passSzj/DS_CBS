@@ -1,4 +1,3 @@
-
 #ifndef DS_CBS_CBS_H
 #define DS_CBS_CBS_H
 
@@ -253,9 +252,9 @@ public:
     int getExpand();
 
     void readInput(){
-        initMapFromXML("D:\\clone\\DS_CBS\\MapData\\SL_Task2.xml", m);
+        initMapFromXML("D:\\clone\\DS_CBS\\MapData\\SL_Task3.xml", m);
         lowLevelCBS.m=this->m;
-        _agents=ReadAgentsFromXML("D:\\clone\\DS_CBS\\AgentData\\SL_Task2_9Agent.xml");
+        _agents=ReadAgentsFromXML("D:\\clone\\DS_CBS\\AgentData\\SL_Task3_10Agent.xml");
 
     }
 

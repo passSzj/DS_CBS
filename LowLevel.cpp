@@ -249,7 +249,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         leftSuccessors[i]->dvParent->depth = current->depth + step;
                         leftSuccessors[i]->dvParent->g = new_cost;
                         leftSuccessors[i]->dvParent->f = leftSuccessors[i]->dvParent->f + heuristicCostEstimate(*leftSuccessors[i]->dvParent, *goal);
-                        leftSuccessors[i]->dvParent->visitLeftSubVertex=true;
+                        leftSuccessors[i]->dvParent->convertLeftSubvertex();
                         open.push_back(leftSuccessors[i]->dvParent);
                     }
 
@@ -261,7 +261,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         (*it)->depth=current->depth+1;
                         (*it)->g=new_cost;
                         (*it)->f=(*it)->g+ heuristicCostEstimate(*(*it),*goal);
-                        (*it)->visitLeftSubVertex=true;
+                        (*it)->convertLeftSubvertex();
                     }
                 }
                 else{
@@ -329,7 +329,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         rightSuccessors[i]->dvParent->depth = current->depth + step;
                         rightSuccessors[i]->dvParent->g = new_cost;
                         rightSuccessors[i]->dvParent->f = rightSuccessors[i]->dvParent->f + heuristicCostEstimate(*rightSuccessors[i]->dvParent, *goal);
-                        rightSuccessors[i]->dvParent->visitRightSubVertex=true;
+                        rightSuccessors[i]->dvParent->convertRightSubvertex();
                         open.push_back(rightSuccessors[i]->dvParent);
                     }
 
@@ -341,7 +341,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         (*it)->depth=current->depth+1;
                         (*it)->g=new_cost;
                         (*it)->f=(*it)->g+ heuristicCostEstimate(*(*it),*goal);
-                        (*it)->visitLeftSubVertex=true;
+                        (*it)->convertRightSubvertex();
                     }
                 }
                 else{
@@ -434,7 +434,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         leftSuccessors[i]->dvParent->depth = current->depth + step;
                         leftSuccessors[i]->dvParent->g = new_cost;
                         leftSuccessors[i]->dvParent->f = leftSuccessors[i]->dvParent->f + heuristicCostEstimate(*leftSuccessors[i]->dvParent, *goal);
-                        leftSuccessors[i]->dvParent->visitLeftSubVertex=true;
+                        leftSuccessors[i]->dvParent->convertLeftSubvertex();
                         open.push_back(leftSuccessors[i]->dvParent);
                     }
 
@@ -446,7 +446,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         (*it)->depth=current->depth+1;
                         (*it)->g=new_cost;
                         (*it)->f=(*it)->g+ heuristicCostEstimate(*(*it),*goal);
-                        (*it)->visitLeftSubVertex=true;
+                        (*it)->convertLeftSubvertex();
                     }
                 }
                 else{
@@ -538,7 +538,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         rightSuccessors[i]->dvParent->depth = current->depth + step;
                         rightSuccessors[i]->dvParent->g = new_cost;
                         rightSuccessors[i]->dvParent->f = rightSuccessors[i]->dvParent->f + heuristicCostEstimate(*rightSuccessors[i]->dvParent, *goal);
-                        rightSuccessors[i]->dvParent->visitRightSubVertex=true;
+                        rightSuccessors[i]->dvParent->convertRightSubvertex();
                         open.push_back(rightSuccessors[i]->dvParent);
                     }
 
@@ -552,7 +552,7 @@ bool lowLevelCBS::Astar(doubleVertex* start, doubleVertex* goal, Path &path,cons
                         (*it)->depth=current->depth+1;
                         (*it)->g=new_cost;
                         (*it)->f=(*it)->g+ heuristicCostEstimate(*(*it),*goal);
-                        (*it)->visitLeftSubVertex=true;
+                        (*it)->convertRightSubvertex();
                     }
                 }
                 else{
