@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.22)
 project(DS_CBS)
 
+add_compile_options(-Wreturn-type)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O0")
 
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")

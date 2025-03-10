@@ -103,6 +103,8 @@ int lowLevelCBS::findVertexInClosed(int x, int y){
             return i;
         }
     }
+
+    return -1;
 }
 
 int lowLevelCBS::getSize(doubleVertex *current,doubleVertex *start,doubleVertex *goal){
@@ -119,6 +121,8 @@ int lowLevelCBS::getSize(doubleVertex *current,doubleVertex *start,doubleVertex 
         else
             return m.getSuccessors(current)[0].size();
     }
+
+    return -1;
 
 }
 

@@ -116,6 +116,7 @@ public:
                 return i;
             }
         }
+        return -1;
     }
 
     pair<pair<int,doubleVertex*>,pair<int,doubleVertex*>> checkConflict(Conflict *conflict){
@@ -201,6 +202,7 @@ public:
                 return s;
             }
         }
+        return nullptr;
     }
 
     CTNode(){
@@ -250,11 +252,16 @@ public:
     bool checkNewSolution(CTNode&node,int agent0,int agnet1);
     bool retrieveAndPopCTNodeWithLowestCost(CTNode** node);
     int getExpand();
+    void handleNotEqualTimeStep(CTNode* newCTNode, const Conflict& conflict, int i,
+                                              const pair<pair<int,doubleVertex*>,pair<int,doubleVertex*>>& timeAndV,
+                                              CTNode* p);
+    void handleEqualTimes(CTNode* newCTNode, const Conflict& conflict, int i, CTNode* p);
+    void handleUnequalTimes(CTNode* newCTNode, const Conflict& conflict, int i, CTNode* p);
 
     void readInput(){
-        initMapFromXML("D:\\clone\\DS_CBS\\MapData\\SL_Task3.xml", m);
+        initMapFromXML("D:\\clone\\DS_CBS\\MapData\\SL_Task1.xml", m);
         lowLevelCBS.m=this->m;
-        _agents=ReadAgentsFromXML("D:\\clone\\DS_CBS\\AgentData\\SL_Task3_10Agent.xml");
+        _agents=ReadAgentsFromXML("D:\\clone\\DS_CBS\\AgentData\\SL_Task1_10Agent.xml");
 
     }
 

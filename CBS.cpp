@@ -49,75 +49,100 @@ vector <Path*> highLevelCBS::RunCBS(){
                     pair<pair<int,doubleVertex*>,pair<int,doubleVertex*>> timeAndV=p->checkConflict(&conflict);
 
 
-                    if(timeAndV.first.first!=conflict.timeStep){
-                        if(timeAndV.first.first-1<conflict.timeStep&&timeAndV.second.first<conflict.timeStep){
-                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],timeAndV.first.second,timeAndV.first.first));
+
+                    if (timeAndV.first.first != conflict.timeStep) {
+                        handleNotEqualTimeStep(newCTNode, conflict, i, timeAndV, p);
+                    } else {
+                        if (conflict.Time[0] == conflict.Time[1]) {
+                            handleEqualTimes(newCTNode, conflict, i, p);
+                        } else {
+                            handleUnequalTimes(newCTNode, conflict, i, p);
                         }
-                        else if(timeAndV.first.first>=timeAndV.second.first){
-                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],timeAndV.first.second,timeAndV.first.first));
-
-                        }else if (timeAndV.first.first<timeAndV.second.first){
-                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i+1],timeAndV.second.second,timeAndV.second.first));
-                        }
-                    }else{
-                        if(conflict.Time[0]==conflict.Time[1]){
-                            if(conflict.V== nullptr){
-                                newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],p->getSolution()[i]->Nodes[conflict.Time[i]],conflict.Time[i]));
-                            }else{
-                                newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]));
-                            }
-
-                        }else{
-                            if(i==0){
-                                if(conflict.Time[0]<conflict.Time[1]){
-                                    newCTNode->changeSource();
-                                    int Time0=conflict.Time[0];
-                                    int Time1=p->getNextTime(conflict.Time[1],p->getSolution()[1]->Nodes);
-                                    for(int s=0;s<=Time1-Time0;s++){
-                                        if(s==0){
-                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                        }else
-                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                    }
-
-                                }else{
-                                    newCTNode->changeSource();
-                                    int Time0=conflict.Time[0];
-                                    int Time1=conflict.Time[1];
-                                    for(int s=0;s<=Time0-Time1;s++){
-                                        if(s==0){
-                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                        }else
-                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                    }
-                                }
-                            }else if (i==1){
-                                if(conflict.Time[1]<=conflict.Time[0]){
-                                    newCTNode->changeSource();
-                                    int Time0=conflict.Time[0];
-                                    int Time1=conflict.Time[1];
-                                    for(int s=0;s<=Time0-Time1;s++){
-                                        if(s==0){
-                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                        }else
-                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                    }
-
-                                }else{
-                                    newCTNode->changeSource();
-                                    int Time0=conflict.Time[0];
-                                    int Time1=conflict.Time[1];
-                                    for(int s=0;s<=Time1-Time0;s++){
-                                        if(s==0){
-                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                        }else
-                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-                                    }
-                                }
-                            }
-                        }
-
                     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//                    if(timeAndV.first.first!=conflict.timeStep){
+//                        if(timeAndV.first.first-1<conflict.timeStep&&timeAndV.second.first<conflict.timeStep){
+//                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],timeAndV.first.second,timeAndV.first.first));
+//                        }
+//                        else if(timeAndV.first.first>=timeAndV.second.first){
+//                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],timeAndV.first.second,timeAndV.first.first));
+//
+//                        }else if (timeAndV.first.first<timeAndV.second.first){
+//                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i+1],timeAndV.second.second,timeAndV.second.first));
+//                        }
+//                    }else{
+//                        if(conflict.Time[0]==conflict.Time[1]){
+//                            if(conflict.V== nullptr){
+//                                newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],p->getSolution()[i]->Nodes[conflict.Time[i]],conflict.Time[i]));
+//                            }else{
+//                                newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]));
+//                            }
+//
+//                        }else{
+//                            if(i==0){
+//                                if(conflict.Time[0]<conflict.Time[1]){
+//                                    newCTNode->changeSource();
+//                                    int Time0=conflict.Time[0];
+//                                    int Time1=p->getNextTime(conflict.Time[1],p->getSolution()[1]->Nodes);
+//                                    for(int s=0;s<=Time1-Time0;s++){
+//                                        if(s==0){
+//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                        }else
+//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                    }
+//
+//                                }else{
+//                                    newCTNode->changeSource();
+//                                    int Time0=conflict.Time[0];
+//                                    int Time1=conflict.Time[1];
+//                                    for(int s=0;s<=Time0-Time1;s++){
+//                                        if(s==0){
+//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                        }else
+//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                    }
+//                                }
+//                            }else if (i==1){
+//                                if(conflict.Time[1]<=conflict.Time[0]){
+//                                    newCTNode->changeSource();
+//                                    int Time0=conflict.Time[0];
+//                                    int Time1=conflict.Time[1];
+//                                    for(int s=0;s<=Time0-Time1;s++){
+//                                        if(s==0){
+//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                        }else
+//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                    }
+//
+//                                }else{
+//                                    newCTNode->changeSource();
+//                                    int Time0=conflict.Time[0];
+//                                    int Time1=conflict.Time[1];
+//                                    for(int s=0;s<=Time1-Time0;s++){
+//                                        if(s==0){
+//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                        }else
+//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
+//                                    }
+//                                }
+//                            }
+//                        }
+//
+//                    }
+
+
 
 
                     newCTNode->setSolution(p->getSolution());
@@ -198,6 +223,8 @@ vector <Path*> highLevelCBS::RunCBS(){
 
         }
     }
+
+
 }
 
 
@@ -432,4 +459,55 @@ int highLevelCBS::getExpand(){
     return highExpand+lowLevelCBS.getLowExpand();
 }
 
+void highLevelCBS::handleNotEqualTimeStep(CTNode* newCTNode, const Conflict& conflict, int i,
+                            const pair<pair<int,doubleVertex*>,pair<int,doubleVertex*>>& timeAndV,
+                            CTNode* p) {
+    if (timeAndV.first.first - 1 < conflict.timeStep && timeAndV.second.first < conflict.timeStep) {
+        newCTNode->addConstraints(p->getConstraint(),
+                                  new Constraint(conflict.agents[i], timeAndV.first.second, timeAndV.first.first));
+        newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i], timeAndV.first.second, timeAndV.first.first));
+    } else if (timeAndV.first.first >= timeAndV.second.first) {
+        newCTNode->addConstraints(p->getConstraint(),
+                                  new Constraint(conflict.agents[i], timeAndV.first.second, timeAndV.first.first));
+    } else if (timeAndV.first.first < timeAndV.second.first) {
+        newCTNode->addConstraints(p->getConstraint(),
+                                  new Constraint(conflict.agents[i + 1], timeAndV.second.second, timeAndV.second.first));
+    }
+}
 
+
+void highLevelCBS::handleEqualTimes(CTNode* newCTNode, const Conflict& conflict, int i, CTNode* p) {
+    if (conflict.V == nullptr) {
+        newCTNode->addConstraints(p->getConstraint(),
+                                  new Constraint(conflict.agents[i],
+                                                 p->getSolution()[i]->Nodes[conflict.Time[i]],
+                                                 conflict.Time[i]));
+    } else {
+        newCTNode->addConstraints(p->getConstraint(),
+                                  new Constraint(conflict.agents[i], conflict.V, conflict.Time[i]));
+    }
+}
+
+void highLevelCBS::handleUnequalTimes(CTNode* newCTNode, const Conflict& conflict, int i, CTNode* p) {
+    newCTNode->changeSource();
+    int Time0 = conflict.Time[0];
+    int Time1 = (i == 0 && conflict.Time[0] < conflict.Time[1])
+                ? p->getNextTime(conflict.Time[1], p->getSolution()[1]->Nodes)
+                : conflict.Time[1];
+
+    int startTime = (conflict.Time[0] < conflict.Time[1]) ? Time0 : Time1;
+    int endTime = (conflict.Time[0] < conflict.Time[1]) ? Time1 : Time0;
+    if (i == 1) {
+        startTime = (conflict.Time[1] <= conflict.Time[0]) ? Time1 : Time0;
+        endTime = (conflict.Time[1] <= conflict.Time[0]) ? Time0 : Time1;
+    }
+
+    for (int s = 0; s <= endTime - startTime; s++) {
+        if (s == 0) {
+            newCTNode->addConstraints(p->getConstraint(),
+                                      new Constraint(conflict.agents[i], conflict.V, conflict.Time[i] + s));
+        } else {
+            newCTNode->addConstraints(new Constraint(conflict.agents[i], conflict.V, conflict.Time[i] + s));
+        }
+    }
+}

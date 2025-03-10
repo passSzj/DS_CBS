@@ -143,6 +143,8 @@ struct doubleVertex{
                 return vlNeighbors.size();
         }
 
+        return -1;
+
     }
 
     void convertLeftSubvertex(){
