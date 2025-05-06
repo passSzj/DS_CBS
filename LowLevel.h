@@ -30,11 +30,8 @@ public:
     double heuristicCostEstimate(const doubleVertex& a, const doubleVertex& b) const;
     double getEuclidDistance(const Vertex& a, const Vertex& b) const;
     int getNodeWithLeastF(const std::vector<doubleVertex*> &list) const;
-    Path ReconstructPath(doubleVertex* node);
     vector<doubleVertex*> ReconstructPathAndJustGetPath(doubleVertex* node);
     void addDvParent(doubleVertex *current,Vertex *v);
-    int findVertexInClosed(int x, int y);
-    int getSize(doubleVertex *current,doubleVertex *start,doubleVertex *goal);
     bool hasConflict(Vertex* vertex,int time,const vector<Constraint*> &constraints);
     void openErase(int x,int y);
     bool isAllInClosed(vector<Vertex*> Successors);

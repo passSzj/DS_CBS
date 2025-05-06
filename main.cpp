@@ -20,7 +20,7 @@ int main() {
     auto end = std::chrono::high_resolution_clock::now();
 
     std::chrono::duration<double> elapsed = end - start;
-    std::cout << "runtime: " << elapsed.count() << " s" << std::endl;
+    std::cout << " runtime: " << elapsed.count() << " s" << std::endl;
 
     print_memory_usage();
     //logMemoryAndTime(elapsed.count());
@@ -35,11 +35,11 @@ void print_memory_usage() {
         SIZE_T virtualMemUsedByMe = pmc.PrivateUsage;
 
         std::cout << "Memory Usage:" << std::endl;
-        std::cout << "Physical Memory Used: " << physMemUsedByMe / 1024 << " KB" << std::endl;
-        std::cout << "Peak Physical Memory Used: " << physMemPeakUsedByMe / 1024 << " KB" << std::endl;
-        std::cout << "Virtual Memory Used: " << virtualMemUsedByMe / 1024 << " KB" << std::endl;
+        std::cout << " Physical Memory Used: " << physMemUsedByMe / 1024 << " KB" << std::endl;
+        std::cout << " Peak Physical Memory Used: " << physMemPeakUsedByMe / 1024 << " KB" << std::endl;
+        std::cout << " Virtual Memory Used: " << virtualMemUsedByMe / 1024 << " KB" << std::endl;
     } else {
-        std::cerr << "Failed to retrieve memory usage information" << std::endl;
+        std::cerr << " Failed to retrieve memory usage information" << std::endl;
     }
 }
 

@@ -51,28 +51,7 @@ int lowLevelCBS::getNodeWithLeastF(const std::vector<doubleVertex*> &list) const
     return min_index;
 }
 
-Path lowLevelCBS::ReconstructPath(doubleVertex* node)
-{
-    std::vector<doubleVertex*> path_reverse;
-    while (node != nullptr)
-    {
-        path_reverse.push_back(node);
-        node = node->parent;
-    }
 
-    Path new_path;
-    for (int i = path_reverse.size() - 1; i >= 0; i--)
-    {
-        new_path.Nodes.push_back(path_reverse[i]);
-    }
-
-
-    for(auto node:new_path.Nodes){
-        std::cout<<node->vl.x<<","<<node->vl.y<<std::endl;
-    }
-
-    return new_path;
-}
 
 vector<doubleVertex*> lowLevelCBS::ReconstructPathAndJustGetPath(doubleVertex* node)
 {
@@ -97,34 +76,7 @@ void lowLevelCBS::addDvParent(doubleVertex *current,Vertex *v){
     v->dvParent->parent = current;
 }
 
-int lowLevelCBS::findVertexInClosed(int x, int y){
-    for(int i=0;i<closed.size();i++){
-        if(closed[i]->vl.x==x&&closed[i]->vl.y==y){
-            return i;
-        }
-    }
 
-    return -1;
-}
-
-int lowLevelCBS::getSize(doubleVertex *current,doubleVertex *start,doubleVertex *goal){
-    if(current->visitLeftSubVertex){
-        return m.getSuccessors(current)[0].size();
-    }
-    if(current->visitRightSubVertex){
-        return m.getSuccessors(current)[1].size();
-    }
-    if((*current)==(*start)){
-        if(goal->vl.x>start->vl.x){
-            return m.getSuccessors(current)[1].size();
-        }
-        else
-            return m.getSuccessors(current)[0].size();
-    }
-
-    return -1;
-
-}
 
 bool lowLevelCBS::hasConflict(Vertex* vertex,int time,const vector<Constraint*> &constraints){
     for(int i=0;i<constraints.size();i++){

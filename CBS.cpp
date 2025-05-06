@@ -62,89 +62,6 @@ vector <Path*> highLevelCBS::RunCBS(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-//                    if(timeAndV.first.first!=conflict.timeStep){
-//                        if(timeAndV.first.first-1<conflict.timeStep&&timeAndV.second.first<conflict.timeStep){
-//                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],timeAndV.first.second,timeAndV.first.first));
-//                        }
-//                        else if(timeAndV.first.first>=timeAndV.second.first){
-//                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],timeAndV.first.second,timeAndV.first.first));
-//
-//                        }else if (timeAndV.first.first<timeAndV.second.first){
-//                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i+1],timeAndV.second.second,timeAndV.second.first));
-//                        }
-//                    }else{
-//                        if(conflict.Time[0]==conflict.Time[1]){
-//                            if(conflict.V== nullptr){
-//                                newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],p->getSolution()[i]->Nodes[conflict.Time[i]],conflict.Time[i]));
-//                            }else{
-//                                newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]));
-//                            }
-//
-//                        }else{
-//                            if(i==0){
-//                                if(conflict.Time[0]<conflict.Time[1]){
-//                                    newCTNode->changeSource();
-//                                    int Time0=conflict.Time[0];
-//                                    int Time1=p->getNextTime(conflict.Time[1],p->getSolution()[1]->Nodes);
-//                                    for(int s=0;s<=Time1-Time0;s++){
-//                                        if(s==0){
-//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                        }else
-//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                    }
-//
-//                                }else{
-//                                    newCTNode->changeSource();
-//                                    int Time0=conflict.Time[0];
-//                                    int Time1=conflict.Time[1];
-//                                    for(int s=0;s<=Time0-Time1;s++){
-//                                        if(s==0){
-//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                        }else
-//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                    }
-//                                }
-//                            }else if (i==1){
-//                                if(conflict.Time[1]<=conflict.Time[0]){
-//                                    newCTNode->changeSource();
-//                                    int Time0=conflict.Time[0];
-//                                    int Time1=conflict.Time[1];
-//                                    for(int s=0;s<=Time0-Time1;s++){
-//                                        if(s==0){
-//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                        }else
-//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                    }
-//
-//                                }else{
-//                                    newCTNode->changeSource();
-//                                    int Time0=conflict.Time[0];
-//                                    int Time1=conflict.Time[1];
-//                                    for(int s=0;s<=Time1-Time0;s++){
-//                                        if(s==0){
-//                                            newCTNode->addConstraints(p->getConstraint(),new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                        }else
-//                                            newCTNode->addConstraints(new Constraint(conflict.agents[i],conflict.V,conflict.Time[i]+s));
-//                                    }
-//                                }
-//                            }
-//                        }
-//
-//                    }
-
-
-
-
                     newCTNode->setSolution(p->getSolution());
 
                     if(timeAndV.first.first==conflict.timeStep){
@@ -224,6 +141,8 @@ vector <Path*> highLevelCBS::RunCBS(){
         }
     }
 
+
+    return vector<Path*>();
 
 }
 
@@ -361,6 +280,7 @@ bool highLevelCBS::checkNewSolution(CTNode& node,int agent0,int agent1){
             }
         }
     }
+
 }
 
 
@@ -409,25 +329,9 @@ int highLevelCBS::getSIC(const vector < Path*> &solution)
 
 
 void highLevelCBS::printSolution(CTNode* ct){
-    int makespan=0;
-    cout<<"------------solution------------"<<endl;
-    auto it=ct->getSolution();
-    for(int ii=0;ii<it.size();ii++){
-        cout<<"agent"<<it[ii]->agentIndex<<":"<<" ("<<it[ii]->Nodes[0]->vl.x<<","<<it[ii]->Nodes[0]->vl.y<<") to"<<" ("<<it[ii]->Nodes[it[ii]->Nodes.size()-1]->vl.x<<","<<it[ii]->Nodes[it[ii]->Nodes.size()-1]->vl.y<<") "<<endl;
-        if(it[ii]->Nodes.size()==0){
-            cout<<"未找到路径"<<endl;
-            continue;
-        }
-        for(int j=0;j<it[ii]->Nodes.size();j++){
-            if(it[ii]->Nodes.size()>makespan) makespan=it[ii]->Nodes.size();
-            cout<<"timeStep "<<it[ii]->Nodes[j]->depth<<": "<<"("<<it[ii]->Nodes[j]->vl.x<<","<<it[ii]->Nodes[j]->vl.y<<")"<<endl;
-        }
-        cout<<endl;
-    }
-    cout<<"------------solution------------"<<endl;
-    cout<<"Cost: "<<ct->cost<<endl;
-    cout<<"Makespan: "<<makespan<<endl;
-    cout<<"Expand: "<<ct->getTotalExpand()<<endl;
+    cout<<"solution:"<<endl;
+    cout<<" Cost: "<<ct->cost<<endl;
+    cout<<" Expand: "<<ct->getTotalExpand()<<endl;
 }
 
 

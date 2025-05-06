@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DS_CBS"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DS_CBS">
+				<Option output="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/DS_CBS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 DS_CBS"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DS_CBS/fast">
+				<Option output="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/DS_CBS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 DS_CBS/fast"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tinyxml2">
+				<Option output="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/libtinyxml2.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 tinyxml2"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tinyxml2/fast">
+				<Option output="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/libtinyxml2.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"/>
+					<Add directory="D:/CLion 2023.1.1/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 tinyxml2/fast"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/CLion 2023.1.1/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/y4624/Desktop/clone/DS_CBS/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/CBS.cpp">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/CBS.h">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/Conflict.cpp">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/Conflict.h">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/Constraint.h">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/LowLevel.cpp">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/LowLevel.h">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/agent.cpp">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/agent.h">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/main.cpp">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/readMapAndAgent.cpp">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/readMapAndAgent.h">
+			<Option target="DS_CBS"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/tinyxml2.cpp">
+			<Option target="tinyxml2"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/tinyxml2.h">
+			<Option target="tinyxml2"/>
+		</Unit>
+		<Unit filename="C:/Users/y4624/Desktop/clone/DS_CBS/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
